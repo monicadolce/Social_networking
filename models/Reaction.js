@@ -1,5 +1,8 @@
 const { Schema, Types } = require('mongoose');
 
+// Schema for what makes up a reaction
+// Add individual properties and their types
+// Setting required to true will disallow null values
 const reactionSchema = new Schema(
   {
     reactionId: {
