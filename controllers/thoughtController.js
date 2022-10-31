@@ -1,11 +1,14 @@
+// Import models
 const { Thought, User } = require('../models');
 
 module.exports = {
+  // Get all thoughts
   getThoughts(req, res) {
     Thought.find()
       .then((thoughts) => res.json(thoughts))
       .catch((err) => res.status(500).json(err));
   },
+  // Get a single thought
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
       .then((thought) =>
@@ -15,7 +18,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // create a new thought
+  // Create a new thought
   createThought(req, res) {
     Thought.create(req.body)
       .then((thought) => {
@@ -37,6 +40,7 @@ module.exports = {
         res.status(500).json(err);
       });
   },
+  // Update a thought
   updateThought(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
@@ -53,6 +57,7 @@ module.exports = {
         res.status(500).json(err);
       });
   },
+  // Delete a thought
   deleteThought(req, res) {
     Thought.findOneAndRemove({ _id: req.params.thoughtId })
       .then((thought) =>
