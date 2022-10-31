@@ -7,6 +7,6 @@ Social_networking creates an API for a social network web application where user
 <img src="./assets/18-nosql-homework-demo-04.gif" alt="demo-4" />
 
 
-Link to walkthrough video that demonstrates functionality: <a href= "https://drive.google.com/file/d/1JDplWpnaaeljHHIbYm53u9Hd95OoFbEw/view?usp=sharing">Social-networking video</a> 
+Link to walkthrough video that demonstrates functionality: <a href= "https://drive.google.com/file/d/1QnZ1GCwD-KztiW70OQIiBjZge2rl199L/view?usp=sharing">Social-networking video</a> 
 
 Application GitHub URL : <a href= "https://github.com/monicadolce/Social_networking">Visit Monica's GitHub Repository</a> 
