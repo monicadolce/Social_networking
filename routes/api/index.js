@@ -1,3 +1,4 @@
+// Establish routes
 const router = require('express').Router();
 const appRoutes = require('./thoughtRoutes');
 const userRoutes = require('./userRoutes');
