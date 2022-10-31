@@ -1,11 +1,14 @@
 const { Schema, model } = require('mongoose');
 
+// Use regular expression to validate an email address
 const validateEmail = (email) => {
     const re = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
     return re.test(email);
 };
 
 // Schema to create User model
+// Add individual properties and their types
+// Setting required to true will disallow null values
 const userSchema = new Schema(
   {
     username: { type: String, unique: true, required: true, trimmed: true }, 
@@ -43,12 +46,6 @@ userSchema
   .get(function () {
     return this.friends.length;
   });
-  // Setter to set the first and last name
-//   .set(function (v) {
-//     const first = v.split(' ')[0];
-//     const last = v.split(' ')[1];
-//     this.set({ first, last });
-//   });
 
 // Initialize our User model
 const User = model('user', userSchema);
