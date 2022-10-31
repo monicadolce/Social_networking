@@ -1,3 +1,4 @@
+// Import model
 const { User } = require('../models');
 
 module.exports = {
@@ -20,14 +21,14 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // create a new user
+  // Create a new user
   createUser(req, res) {
     User.create(req.body)
       .then((user) => res.json(user))
       .catch((err) => res.status(500).json(err));
   },
 
-  // update user
+  // Update user
   updateUser(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.userId },
@@ -45,7 +46,7 @@ module.exports = {
       });
   },
 
-  // Delete a user and associated apps
+  // Delete a user and associated thoughts
   deleteUser(req, res) {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((user) =>
@@ -57,7 +58,7 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
-
+// Add a friend
 addFriend(req, res) {
   User.findOneAndUpdate(
     { _id: req.params.userId },
@@ -71,7 +72,7 @@ addFriend(req, res) {
     )
     .catch((err) => res.status(500).json(err));
 },
-
+// Remove a friend
 removeFriend(req, res) {
   User.findOneAndUpdate(
     { _id: req.params.userId },
@@ -87,4 +88,3 @@ removeFriend(req, res) {
 }
 
 };
-// add friend push remove friend pull instead of set
