@@ -2,6 +2,8 @@ const { Schema, model } = require('mongoose');
 const Reaction = require('./Reaction');
 
 // Schema to create Thought model
+// Add individual properties and their types
+// Setting required to true will disallow null values
 const thoughtSchema = new Schema(
     {
         thoughtText: {
